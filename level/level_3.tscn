@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cfay1lr6v0dfr"]
 
-[ext_resource type="Script" path="res://level/landing_pad.gd" id="1_cfngh"]
+[ext_resource type="Script" path="res://objects/landing_pad.gd" id="1_cfngh"]
 [ext_resource type="PackedScene" uid="uid://cgrutbq8t27wv" path="res://player/player.tscn" id="2_g2tlj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dj58c"]
@@ -64,7 +64,7 @@ use_collision = true
 size = Vector3(2, 0.4, 2)
 material = SubResource("StandardMaterial3D_bbpaa")
 script = ExtResource("1_cfngh")
-file_path = "res://level/level.tscn"
+file_path = "res://level/level_4.tscn"
 
 [node name="Player" parent="." instance=ExtResource("2_g2tlj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 1.4, 0)

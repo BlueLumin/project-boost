@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhus608j7nl4"]
+[gd_scene load_steps=10 format=3 uid="uid://umhs7r2ri56n"]
 
-[ext_resource type="Script" path="res://objects/landing_pad.gd" id="1_4mm3g"]
-[ext_resource type="PackedScene" uid="uid://cgrutbq8t27wv" path="res://player/player.tscn" id="2_nvx8s"]
+[ext_resource type="Script" path="res://objects/landing_pad.gd" id="1_0flj3"]
+[ext_resource type="PackedScene" uid="uid://cgrutbq8t27wv" path="res://player/player.tscn" id="2_lkuet"]
+[ext_resource type="PackedScene" uid="uid://d1ifi8pw44tdc" path="res://objects/moving_hazard.tscn" id="3_wy4ah"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dj58c"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -25,7 +26,7 @@ albedo_color = Color(5.39064e-06, 0.837161, 0.837749, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbpaa"]
 albedo_color = Color(0.360784, 0.72549, 0.32549, 1)
 
-[node name="Level1" type="Node3D"]
+[node name="Level4" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_438t5")
@@ -54,8 +55,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0.2, 0)
 use_collision = true
 size = Vector3(2, 0.4, 2)
 material = SubResource("StandardMaterial3D_bbpaa")
-script = ExtResource("1_4mm3g")
-file_path = "res://level/level_2.tscn"
+script = ExtResource("1_0flj3")
+file_path = "res://level/level_1.tscn"
 
-[node name="Player" parent="." instance=ExtResource("2_nvx8s")]
+[node name="Player" parent="." instance=ExtResource("2_lkuet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 1.4, 0)
+
+[node name="MovingHazard" parent="." instance=ExtResource("3_wy4ah")]
+destination = Vector3(0, 2, 0)
+duration = 3.0
