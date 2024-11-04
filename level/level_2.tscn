@@ -1,23 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxa26qiewak4c"]
+[gd_scene load_steps=7 format=3 uid="uid://bxa26qiewak4c"]
 
+[ext_resource type="PackedScene" uid="uid://miwumtvcdsgn" path="res://background.tscn" id="1_fnlms"]
 [ext_resource type="Script" path="res://objects/landing_pad.gd" id="1_wvki7"]
 [ext_resource type="PackedScene" uid="uid://cgrutbq8t27wv" path="res://player/player.tscn" id="2_3caxy"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dj58c"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_1bvuk"]
-sky_material = SubResource("ProceduralSkyMaterial_dj58c")
-
-[sub_resource type="Environment" id="Environment_438t5"]
-background_mode = 2
-sky = SubResource("Sky_1bvuk")
-tonemap_mode = 2
-glow_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h65od"]
-albedo_color = Color(0.4, 0.270588, 0.176471, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qyqip"]
 albedo_color = Color(0.917008, 0.556675, 0.905991, 1)
@@ -28,23 +13,12 @@ albedo_color = Color(5.39064e-06, 0.837161, 0.837749, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbpaa"]
 albedo_color = Color(0.360784, 0.72549, 0.32549, 1)
 
-[node name="Level2" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_438t5")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-shadow_enabled = true
+[node name="Level" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.994582, 0.103956, 0, -0.103956, 0.994582, 0, 3.76234, 8.06686)
+transform = Transform3D(1, 0, 0, 0, 0.994582, 0.103956, 0, -0.103956, 0.994582, 0, 5.575, 9.33)
 
-[node name="Floor" type="CSGBox3D" parent="." groups=["Hazard"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
-use_collision = true
-size = Vector3(30, 8, 5)
-material = SubResource("StandardMaterial3D_h65od")
+[node name="Floor" parent="." instance=ExtResource("1_fnlms")]
 
 [node name="Obstacle" type="CSGBox3D" parent="." groups=["Hazard"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52124, 0)
